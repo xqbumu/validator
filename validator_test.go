@@ -8591,6 +8591,7 @@ func TestTranslationFieldErrors(t *testing.T) {
 		selfErr = append(selfErr, SelfError{e})
 	}
 
+	NotEqual(t, selfErr.Error(), "")
 	Equal(t, selfErr.Translate(trans), ValidationErrorsTranslations{
 		"": " is a required field",
 	})
